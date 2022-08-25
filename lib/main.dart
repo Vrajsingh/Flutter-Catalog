@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,14 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
- //   bringVegetables(thaila: false); (for Concept purpose only)
     return MaterialApp(
-      //  home: HomePage(),
         themeMode: ThemeMode.light,
-        theme: ThemeData(primarySwatch: Colors.deepPurple),
+        theme: ThemeData(
+            primarySwatch: Colors.deepPurple,
+            fontFamily: GoogleFonts.lato().fontFamily),
         darkTheme: ThemeData(brightness: Brightness.dark),
 
-      initialRoute: "/home",
+      initialRoute: "/",
       routes: {
         "/": (context) => LoginPage(),
         "/home": (context) => HomePage(),
@@ -26,11 +27,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-/*
-Just for concept builder - How methods work ?
-
-  bringVegetables({required bool thaila, int rupees = 100}) {
-    // Comment => take cycle
-    // Comment => go to sec 16
-  }
-*/
