@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import '../models/catalog.dart';
 
 class HomeDetailPage extends StatelessWidget {
@@ -13,7 +12,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -29,8 +30,8 @@ class HomeDetailPage extends StatelessWidget {
                     shape: MaterialStateProperty.all(StadiumBorder()),
                   ),
 
-                  child: "Buy".text.xl.make()
-              ).wh(100,50)
+                  child: "Add to Cart".text.xl.make()
+              ).wh(130,50)
             ],
           ).p32(),
       ),
@@ -57,6 +58,8 @@ class HomeDetailPage extends StatelessWidget {
                       .make(),
                   catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                   10.heightBox,
+                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."
+                      .text.textStyle(context.captionStyle).make().p16(),
                 ]).py64(),
               ),
             ))

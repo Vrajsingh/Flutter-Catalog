@@ -16,7 +16,13 @@ class CatalogList extends StatelessWidget {
         itemBuilder: (context, index) {
           final catalog = CatalogModel.items[index];
           return InkWell(
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomeDetailPage(catalog: catalog))),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeDetailPage(
+                      catalog: catalog,
+                  ),
+                  ),
+              ),
               child: CatalogItem(catalog: catalog),
           );
         }
@@ -41,7 +47,8 @@ class CatalogItem extends StatelessWidget {
                 image: catalog.image
             ),
           ),
-          Expanded(child: Column(
+          Expanded(
+              child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -53,6 +60,7 @@ class CatalogItem extends StatelessWidget {
                 buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${catalog.price}".text.bold.xl.make(),
+
                   ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
@@ -60,11 +68,13 @@ class CatalogItem extends StatelessWidget {
                         shape: MaterialStateProperty.all(StadiumBorder()),
                       ),
 
-                      child: "Buy".text.make())
+                      child: "Add to cart".text.make()
+                  )
                 ],
               ).pOnly(right: 8.0)
             ],
-          ))
+          )
+          )
         ],
       ),
     ).white.roundedLg.square(150).make().py16();
