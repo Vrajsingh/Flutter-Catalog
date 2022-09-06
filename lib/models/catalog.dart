@@ -1,12 +1,4 @@
 class CatalogModel {
-  //singleton class start
-  static final catModel = CatalogModel._internal();
-
-  CatalogModel._internal();
-
-  factory CatalogModel() => catModel;
-  // singleton class ends
-
   static List<Item> items = [];
 
   // Get Item by ID
