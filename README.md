@@ -29,7 +29,7 @@
 24. Chapter 24 (VelocityX State Management | VxState | VxStore)
 25. Chapter 25 (VelocityX State Management | VxMutation)
 26. Chapter 26 (VelocityX State Management | VxBuilder | VxConsumer)
-27. Chapter 27 (HTTP | API | Networking | Badge)
+27. Chapter 27 (HTTP | API (Refactor Phase) | Networking | Badge)
 
 
 ### Contributed by - VISHAL RAJ
