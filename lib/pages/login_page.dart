@@ -2,6 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+class UsernameFieldValidator {
+  static String? validate(String value) {
+    return value.isEmpty ? 'Username cannot be empty' : null;
+  }
+}
+
+class PasswordFieldValidator {
+  static String? validate(String value) {
+    if(value == null){
+      return null;
+    }else if (value.isEmpty) {
+    return "Password cannot be empty";
+    }
+    else if(value.length < 6) {
+    return "Password length should be atleast 6";
+    }
+    return null;
+  }
+}
+
 class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -54,15 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Enter Username",
                       labelText: "Username",
                     ),
-                    validator: (value) {
-                      if(value == null) {
-                        return null;
-                      }
-                      else if(value.isEmpty) {
-                        return "Username cannot be empty";
-                      }
-                      return null;
-                    },
+                    validator: (value) => UsernameFieldValidator.validate(value!),
                     onChanged: (value) {
                       name = value;
                       setState(() {});
@@ -74,18 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Enter Password",
                       labelText: "Password",
                     ),
-                    validator: (value) {
-                      if(value == null){
-                        return null;
-                      }
-                      else if (value.isEmpty) {
-                        return "Password cannot be empty";
-                      }
-                      else if(value.length < 6) {
-                        return "Password length should be atleast 6";
-                      }
-                      return null;
-                    },
+                    validator: (value) => PasswordFieldValidator.validate(value!),
                   ),
                   SizedBox(height: 40.0),
 
